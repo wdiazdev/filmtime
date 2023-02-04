@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
+
+:root {
+    --primary--font: 'Righteous', sans-serif;
+    --secondary--font: 'Signika', sans-serif;
+    --secondary--color: #f40612;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    overflow-x: hidden;
+    background: #461013;
+}
+
+a {
+    color: #fff;
+}
+
+@media screen and (max-width:1000px) {}
+
+@media screen and (max-width:640px) {}
+
+@media screen and (max-width:360px) {}

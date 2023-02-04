@@ -1,0 +1,74 @@
+.signup--container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/src/assets/signupbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup--container {}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    border-radius: 1rem;
+}
+
+form input {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #525252;
+    font-size: 1rem;
+}
+
+form input::placeholder {
+    color: #525252;
+}
+
+.signup--header {
+    font-size: 2rem;
+    font-family: var(--primary--font);
+}
+
+.signup--btn {
+    width: 100%;
+    padding: 1rem;
+    color: #111;
+    font-size: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.signup--btn:hover {
+    background-color: var(--secondary--color);
+    color: #fff;
+}
+
+.signup--container p {
+    font-size: 1.2rem;
+}
+
+.signup--container a:hover {
+    color: var(--secondary--color);
+    transition: 0.3s;
+}
+
+.signup--error {
+    color: var(--secondary--color);
+}
