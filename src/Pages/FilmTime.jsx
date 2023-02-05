@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function FilmZone() {
+export default function FilmTime() {
     return (
         <div>
-            <h1>Test FilmZone</h1>
+            <h1>Home</h1>
         </div>
     )
 };

@@ -35,7 +35,6 @@ export default function SignUp() {
     };
 
     setTimeout(() => {
-
         setError(false)
     }, 5000)
 

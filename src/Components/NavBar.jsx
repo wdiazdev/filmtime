@@ -5,9 +5,9 @@ export default function NavBar() {
     return (
         <>
             <nav>
-                <Link to='/'>Sign Up</Link>
+                <Link to='/signup'>Sign Up</Link>
                 <Link to='/login'>Login</Link>
-                <Link to='/filmzone'>filmzone</Link>
+                <Link to='/'>Home</Link>
             </nav>
         </>
     )

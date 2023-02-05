@@ -6,7 +6,7 @@ import {
   from 'react-router-dom'
 import './App.css'
 import NavBar from './Components/NavBar'
-import FilmZone from './Pages/FilmZone'
+import FilmTime from './Pages/FilmTime'
 import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
 
@@ -17,7 +17,7 @@ function App() {
       element: <AppLayout />,
       children: [
         {
-          path: '/',
+          path: '/signup',
           element: <SignUp />
         },
         {
@@ -25,8 +25,8 @@ function App() {
           element: <Login />
         },
         {
-          path: '/filmzone',
-          element: <FilmZone />
+          path: '/',
+          element: <FilmTime />
         }
       ]
     },
@@ -35,7 +35,6 @@ function App() {
   return (
     <div className='App'>
       <RouterProvider router={router} />
-
     </div>
   )
 };
