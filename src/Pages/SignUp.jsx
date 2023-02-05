@@ -27,7 +27,7 @@ export default function SignUp() {
             setError('')
             await createUser(emailRef.current.value, passwordRef.current.value)
             console.log('Signed Up Successfully')
-            navigate('/filmzone')
+            navigate('/')
         } catch (err) {
             setError('Failed to create an account')
             console.log(err.message)
@@ -49,7 +49,6 @@ export default function SignUp() {
 
                 <input
                     type='email'
-                    id='email'
                     placeholder='Email Address'
                     ref={emailRef}
                     required
@@ -57,7 +56,6 @@ export default function SignUp() {
 
                 <input
                     type='password'
-                    id='password'
                     placeholder='Password'
                     ref={passwordRef}
                     required
@@ -65,7 +63,6 @@ export default function SignUp() {
 
                 <input
                     type='password'
-                    id='confirmpassword'
                     placeholder='Confirm Password'
                     ref={passwordConfirmRef}
                     required

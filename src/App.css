@@ -14,6 +14,7 @@
     list-style: none;
     text-decoration: none;
     color: #fff;
+    font-family: var(--secondary--font);
 }
 
 html {
@@ -23,7 +24,7 @@ html {
 
 body {
     overflow-x: hidden;
-    background: #461013;
+    background: #000;
 }
 
 a {

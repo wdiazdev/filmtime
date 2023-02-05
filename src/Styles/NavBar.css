@@ -1,0 +1,36 @@
+.nav--container {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 5px var(--secondary--color);
+}
+
+.logo--container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.logo--container h3 {
+    font-family: var(--primary--font);
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.logo--container span {
+    font-size: 1.5rem;
+    transform: rotate(-15deg);
+    color: #00b4d8;
+    font-weight: 700;
+}
+
+.navbar--links {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}

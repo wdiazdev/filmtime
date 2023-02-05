@@ -1,51 +1,31 @@
-import {
-  createBrowserRouter,
-  Outlet,
-  RouterProvider
-}
-  from 'react-router-dom'
-import './App.css'
-import NavBar from './Components/NavBar'
-import FilmTime from './Pages/FilmTime'
-import Login from './Pages/Login'
-import SignUp from './Pages/SignUp'
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
+import NavBar from './Components/NavBar';
 
 function App() {
 
-  const router = createBrowserRouter([
-    {
-      element: <AppLayout />,
-      children: [
-        {
-          path: '/signup',
-          element: <SignUp />
-        },
-        {
-          path: '/login',
-          element: <Login />
-        },
-        {
-          path: '/',
-          element: <FilmTime />
-        }
-      ]
-    },
-  ]);
-
   return (
     <div className='App'>
-      <RouterProvider router={router} />
+      <NavBar />
+      <Routes>
+        <Route index path='/' element={<Home />} />
+        {/* <Route index path='/coin/:id' element={<CoinPage />} /> */}
+        <Route exact path='/Login' element={<Login />} />
+        <Route exact path='/signup' element={<SignUp />} />
+        {/* <Route index path='/forgot-password' element={<ForgotPassword />} /> */}
+        {/* //! protected route
+        <Route index path='/account' element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } /> */}
+        {/* <Route path='*' element={<Error404 />} /> */}
+      </Routes>
     </div>
   )
 };
 
 export default App
-
-const AppLayout = () => {
-  return (
-    <>
-      <NavBar />
-      <Outlet />
-    </>
-  )
-};

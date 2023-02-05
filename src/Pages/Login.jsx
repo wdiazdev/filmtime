@@ -27,6 +27,10 @@ export default function Login() {
         }
     };
 
+    setTimeout(() => {
+        setError(false)
+    }, 5000)
+
     return (
         <div className='signup--container'>
 
@@ -34,7 +38,7 @@ export default function Login() {
                 className='form'
                 onSubmit={handleSignIn}
             >
-                <h2 className='signup--header'>Sign Up</h2>
+                <h2 className='signup--header'>Login</h2>
 
                 <input
                     type='email'
@@ -56,12 +60,12 @@ export default function Login() {
                     type='submit'
                     className='signup--btn'
                 >
-                    Create Account
+                    Login
                 </button>
 
                 {error && <p className='signup--error'>{error}</p>}
 
-                <p>Have an account? <Link to='/login'>Login</Link></p>
+                <p>Don't have an account? <Link to='/signup'>Sign Up</Link></p>
 
             </form>
 
