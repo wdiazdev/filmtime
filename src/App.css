@@ -5,15 +5,15 @@
     --primary--font: 'Righteous', sans-serif;
     --secondary--font: 'Signika', sans-serif;
     --secondary--color: #f40612;
+    --silver: #777777;
+    --gray: #181818;
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    list-style: none;
     text-decoration: none;
-    color: #fff;
     font-family: var(--secondary--font);
 }
 
@@ -25,6 +25,7 @@ html {
 body {
     overflow-x: hidden;
     background: #000;
+    color: #fff;
 }
 
 a {

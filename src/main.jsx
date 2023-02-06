@@ -2,14 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter } from 'react-router-dom';
 import { AuthContextProvider } from './Context/AuthContext';
+import { Provider } from 'react-redux';
+import { store } from './Store';
 import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
-      <AuthContextProvider>
-        <App />
-      </AuthContextProvider>
+      <Provider store={store}>
+        <AuthContextProvider>
+          <App />
+        </AuthContextProvider>
+      </Provider>
     </HashRouter>
   </React.StrictMode>,
 );

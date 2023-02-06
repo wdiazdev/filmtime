@@ -21,7 +21,7 @@ form {
     gap: 1rem;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     border-radius: 1rem;
-    border: 2px solid #525252;
+    border: 2px solid var(--silver);
 }
 
 form input {
@@ -30,12 +30,13 @@ form input {
     outline: none;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #525252;
+    border-bottom: 2px solid var(--silver);
     font-size: 1rem;
+    color: #fff;
 }
 
 form input::placeholder {
-    color: #525252;
+    color: var(--silver);
 }
 
 .signup--header {

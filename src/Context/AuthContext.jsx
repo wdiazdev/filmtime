@@ -23,7 +23,7 @@ export const AuthContextProvider = ({ children }) => {
     }
 
     const logout = () => {
-        return signOut(auth)
+        return signOut(firebaseAuth)
     }
 
     const resetPassword = (email) => {
