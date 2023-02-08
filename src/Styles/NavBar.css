@@ -10,11 +10,17 @@
     box-shadow: 0 0 5px var(--secondary--color);
 }
 
-.logo--links {
+.nav--links {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.nav--links a:hover {
+    transition: 0.3s ease-in-out;
+    color: var(--secondary--color);
 }
 
 .logo {
@@ -26,11 +32,11 @@
 .logo h3 {
     font-family: var(--primary--font);
     letter-spacing: 2px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .logo span {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transform: rotate(-15deg);
     color: #00b4d8;
     font-weight: 700;
@@ -40,17 +46,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
     gap: 1rem;
-}
-
-.nav--right>button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    color: red;
-    font-size: 1.5rem;
 }
 
 .search {
@@ -79,4 +75,28 @@
     background: transparent;
     outline: none;
     border: none;
+}
+
+.logout--btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s ease-out;
+}
+
+.logout--btn:hover {
+    color: var(--secondary--color);
+}
+
+.login--btn {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s ease-out;
+}
+
+.login--btn:hover {
+    color: #00b4d8;
 }

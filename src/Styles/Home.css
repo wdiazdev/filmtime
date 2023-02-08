@@ -46,6 +46,12 @@
     background: var(--silver);
 }
 
+.play--btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
 .hero--btn:hover {
     background: var(--secondary--color);
     color: #fff;

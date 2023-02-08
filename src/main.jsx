@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </AuthContextProvider>
       </Provider>
     </HashRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

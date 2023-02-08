@@ -1,5 +1,6 @@
 import React from 'react'
 import CardSlider from './Cardslider'
+import '../Styles/Slider.css';
 
 export default function Slider({ movies }) {
 
@@ -9,13 +10,13 @@ export default function Slider({ movies }) {
 
     return (
 
-        <div>
+        <div className='cards--sliders--wrappers'>
             <CardSlider title='Trending Now' data={getMoviesRange(0, 10)} />
-            <CardSlider title='New Releases' data={getMoviesRange(10, 20)} />
-            <CardSlider title='Blockbuster' data={getMoviesRange(20, 30)} />
-            <CardSlider title='Popular on FilmTime' data={getMoviesRange(30, 40)} />
-            <CardSlider title='Action Movies' data={getMoviesRange(40, 50)} />
-            <CardSlider title='Epics' data={getMoviesRange(50, 60)} />
+            <CardSlider title='Trending Now' data={getMoviesRange(10, 20)} />
+            <CardSlider title='Trending Now' data={getMoviesRange(20, 30)} />
+            <CardSlider title='Trending Now' data={getMoviesRange(30, 40)} />
+            <CardSlider title='Trending Now' data={getMoviesRange(40, 50)} />
+            <CardSlider title='Trending Now' data={getMoviesRange(50, 60)} />
         </div>
     )
 };

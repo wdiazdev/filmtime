@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import '../Styles/Card.css';
 import video from '../assets/movietrailer.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -13,8 +12,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Card({ movieData, isLiked = false }) {
-
-    console.log(movieData.genres);
 
     const [isHovered, setIsHovered] = useState(false);
 

@@ -1,8 +1,62 @@
-.card--container {
+/* CARDS SLIDERS ///////////////// */
+
+
+
+/* CARD WRAPPER /////////////////// */
+
+.card-slider--wrapper {
     position: relative;
-    margin: 0 auto;
-    max-width: 250px;
-    padding: 0.2rem;
+    padding: 2rem 0;
+}
+
+.card-slider--wrapper h2 {
+    font-size: 2.2em;
+    margin: 0 0 2rem 4rem;
+}
+
+.slider--action {
+    position: absolute;
+    top: 10rem;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.slider--action>svg {
+    font-size: 2rem;
+}
+
+.left {
+    left: 1.5rem;
+}
+
+.right {
+    right: 1.5rem;
+}
+
+.none {
+    display: none;
+}
+
+
+/* CARD ////////////////////////// */
+
+.card--wrapper {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    transform: translateX(0px);
+    transition: 0.3s ease-in-out;
+    margin-left: 4rem;
+}
+
+.card--container {
+    max-width: 300px;
+    width: 300px;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
 }
 
 .card--container>img {
@@ -13,15 +67,14 @@
 
 .card--hero {
     position: absolute;
-    top: -18vh;
+    top: -16vh;
     left: 0;
     z-index: 20;
     width: 300px;
     border-radius: 0.4rem;
-    box-shadow: rgba(255, 255, 255, 0.75) 0px 3px 15px;
+    box-shadow: rgba(255, 255, 255, 0.75) 0px 3px 10px;
     background: var(--gray);
     transition: 0.3s;
-
 }
 
 .img--video--container {
@@ -94,7 +147,7 @@
 }
 
 .genres {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     width: 100%;
     display: flex;
     justify-content: space-evenly;

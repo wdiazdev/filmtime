@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../Styles/NavBar.css';
 import { UserAuth } from '../Context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
 
 export default function NavBar() {
 
@@ -32,8 +32,17 @@ export default function NavBar() {
     return (
         <nav className='nav--container'>
 
-            <div className='logo--links'>
+            <div className='nav--links'>
 
+                <Link to='/movies'>Movies</Link>
+
+                <Link to='/series'>Series</Link>
+
+                <Link to='/mylist'>My List</Link>
+
+            </div>
+
+            <div className='logo--wrapper'>
                 <Link
                     to='/'
                     className='logo'
@@ -41,19 +50,11 @@ export default function NavBar() {
                     <h3>Film</h3>
                     <span>Time</span>
                 </Link>
-
-                <Link to='/signup'>Sign Up</Link>
-
-                <Link to='/login'>Login</Link>
-
-                <Link to='/'>Home</Link>
-
             </div>
 
             <div className='nav--right'>
 
                 <div className='search'>
-
                     <button>
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
@@ -62,12 +63,25 @@ export default function NavBar() {
                         type="text"
                         placeholder='Search'
                     />
-
                 </div>
 
-                <button onClick={handleLogout}>
-                    <FontAwesomeIcon icon={faPowerOff} />
-                </button>
+                {user ?
+                    <button button
+                        className='logout--btn'
+                        onClick={handleLogout}
+                    >
+                        <FontAwesomeIcon icon={faPowerOff} />
+                    </button> :
+
+
+
+                    <Link
+                        to='/login'
+                        className='login--btn'
+                    >
+                        <FontAwesomeIcon icon={faUser} />
+                    </Link>
+                }
 
                 {error && <p className='signup--error'>{error}</p>}
 

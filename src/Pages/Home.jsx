@@ -43,11 +43,11 @@ export default function Home() {
                     <div className='hero--btns--container'>
 
                         <button
-                            className='hero--btn'
+                            className='hero--btn play--btn'
+                            title='play'
                             onClick={() => navigate('player')}
                         >
                             <FontAwesomeIcon icon={faPlay} />
-                            Play
                         </button>
 
                         <button className='hero--btn'>
