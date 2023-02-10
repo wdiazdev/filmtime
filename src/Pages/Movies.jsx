@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Genres from '../Components/Genres';
+import Slider from '../Components/Slider';
 import { fetchMovies, getGenres } from '../Store';
 
 
@@ -22,11 +24,22 @@ export default function Movies() {
 
     useEffect(() => {
         if (genresLoaded) {
-            dispatch(fetchMovies({ genres, type: "all" }));
+            dispatch(fetchMovies({ genres, type: 'movie' }));
         }
     }, [genresLoaded]);
 
     return (
-        <div>Movies</div>
+        <div className='movie--page--container'>
+
+            <Genres genres={genres} type='movie' />
+
+            <div className='movie--info'>
+                {
+                    movies.length ?
+                        <Slider movies={movies} /> :
+                        <h1 className='not--available'>Not Available</h1>
+                }
+            </div>
+        </div>
     )
-}
+};

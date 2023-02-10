@@ -1,13 +1,12 @@
 .nav--container {
-    position: sticky;
+    position: fixed;
     z-index: 1000;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    background: rgba(0, 0, 0, .8);
-    box-shadow: 0 0 5px var(--secondary--color);
+    background: rgba(0, 0, 0, .4);
 }
 
 .nav--links {

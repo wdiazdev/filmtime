@@ -52,6 +52,8 @@ const getRawData = async (api, genres, paging) => {
     return moviesArray;
 };
 
+//? Funtion to get trending movies
+
 export const fetchMovies = createAsyncThunk(
     'filmtime/trending',
     async ({ type }, thunkAPI) => {
@@ -66,18 +68,37 @@ export const fetchMovies = createAsyncThunk(
     }
 );
 
-// return getRawData(`${BASE_URL}/discover/${type}?api_key=${API_Key}&with_genres=${genre}`);
+//? Function to get movies by gender
+
+export const fetchMoviesByGenres = createAsyncThunk(
+    'filmtime/moviesbygenres',
+    async ({ type, genre }, thunkAPI) => {
+        const {
+            filmtime: { genres },
+        } = thunkAPI.getState();
+        return getRawData(
+            `${BASE_URL}/discover/${type}?api_key=${API_Key}&with_genres=${genre}`,
+            genres
+        );
+    }
+);
 
 
 const FilmTimeSlice = createSlice({
     name: 'filmtime',
     initialState,
     extraReducers: (builder) => {
+
         builder.addCase(getGenres.fulfilled, (state, action) => {
             state.genres = action.payload;
             state.genresLoaded = true;
         });
+
         builder.addCase(fetchMovies.fulfilled, (state, action) => {
+            state.movies = action.payload;
+        });
+
+        builder.addCase(fetchMoviesByGenres.fulfilled, (state, action) => {
             state.movies = action.payload;
         });
     },

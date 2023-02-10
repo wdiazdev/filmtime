@@ -73,8 +73,6 @@ export default function NavBar() {
                         <FontAwesomeIcon icon={faPowerOff} />
                     </button> :
 
-
-
                     <Link
                         to='/login'
                         className='login--btn'

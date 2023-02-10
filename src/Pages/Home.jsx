@@ -1,67 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/Home.css'
-import BgImg from '../assets/Homebg.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, getGenres } from '../Store';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import Slider from '../Components/Slider';
+import { sendRequest } from '../Utility/api';
+import axios from 'axios';
+import MovieBanner from '../Components/MovieBanner';
 
 export default function Home() {
 
-    const navigate = useNavigate();
-
-    const genresLoaded = useSelector((state) => state.filmtime.genresLoaded);
-
-    const movies = useSelector((state) => state.filmtime.movies);
-
-    const genres = useSelector((state) => state.filmtime.genres);
-
-    const dispatch = useDispatch();
+    const [movies, setMovies] = useState('');
 
     useEffect(() => {
-        dispatch(getGenres());
+        axios.get(sendRequest.nowPlaying)
+            .then((request) => {
+                setMovies(request.data.results)
+            })
     }, []);
 
-    useEffect(() => {
-        if (genresLoaded) {
-            dispatch(fetchMovies({ genres, type: "all" }));
-        }
-    }, [genresLoaded]);
+
+    //? randomMovie = to get random movie from the API request
+
+    const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+
+    console.log(randomMovie);
 
     return (
-        <>
-            <div className='hero'>
-
-                <img src={BgImg} alt="Background" className='hero--bgimg' />
-
-                <div className='hero--info'>
-
-                    <h1>Avatar</h1>
-
-                    <div className='hero--btns--container'>
-
-                        <button
-                            className='hero--btn play--btn'
-                            title='play'
-                            onClick={() => navigate('player')}
-                        >
-                            <FontAwesomeIcon icon={faPlay} />
-                        </button>
-
-                        <button className='hero--btn'>
-                            <FontAwesomeIcon icon={faCircleInfo} />
-                            More Info
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <Slider movies={movies} />
-        </>
+        <div className='home--container'>
+            <MovieBanner randomMovie={randomMovie} />
+        </div>
     )
 };

@@ -94,8 +94,8 @@ export default function Card({ movieData, isLiked = false }) {
 
                         <div >
                             <ul className='genres'>
-                                {movieData.genres.map((genre) => (
-                                    <li>{genre}</li>
+                                {movieData.genres.map((genre, index) => (
+                                    <li key={index}>{genre}</li>
                                 ))}
                             </ul>
                         </div>
