@@ -31,6 +31,7 @@
     flex-direction: column;
     z-index: 100;
     left: 6rem;
+    bottom: 6rem;
     gap: 0.8rem;
     font-size: 1.3rem;
 }
@@ -43,16 +44,24 @@
 .banner-icons {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.2rem;
     border: 1px solid var(--silver);
     color: 1px solid var(--silver);
     font-size: 1.2rem;
     width: fit-content;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+
+.banner-icons>svg {
+    font-size: 1.5rem;
 }
 
 .banner-icons:hover {
-    color: var(--secondary--color);
+    color: #fff;
+    letter-spacing: 2px;
+    gap: 0.5rem;
 }

@@ -7,7 +7,7 @@ import { faSearch, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function NavBar() {
 
-    const [error, setError] = useState();
+    const [error, setError] = useState(false);
 
     const { user, logout } = UserAuth();
 
@@ -38,7 +38,7 @@ export default function NavBar() {
 
                 <Link to='/series'>Series</Link>
 
-                <Link to='/mylist'>My List</Link>
+                {user ? <Link to='/mylist'>My List</Link> : null}
 
             </div>
 
@@ -66,7 +66,7 @@ export default function NavBar() {
                 </div>
 
                 {user ?
-                    <button button
+                    <button
                         className='logout--btn'
                         onClick={handleLogout}
                     >

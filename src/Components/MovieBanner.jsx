@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/MovieBanner.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { FaInfoCircle } from 'react-icons/fa';
+import { sendRequest } from '../Utility/api';
+import axios from 'axios';
 
-export default function MovieBanner({ randomMovie }) {
+export default function MovieBanner() {
+
+    const [nowPlaying, setNowPlaying] = useState('');
+
+    useEffect(() => {
+        axios.get(sendRequest.nowPlaying)
+            .then((request) => {
+                setNowPlaying(request.data.results)
+            })
+    }, []);
+
+
+    //? randomMovie = to get random movie from the API request
+
+    const randomMovie = nowPlaying[Math.floor(Math.random() * nowPlaying.length)];
+
+    // console.log(randomMovie);
 
     const truncateString = (str, num) => {
         if (str?.length > num) {
@@ -12,7 +29,6 @@ export default function MovieBanner({ randomMovie }) {
             return str;
         }
     };
-
 
     return (
         <div className='movie--banner--container'>
@@ -32,8 +48,8 @@ export default function MovieBanner({ randomMovie }) {
 
                 <p>{truncateString(randomMovie?.overview, 200)}</p>
 
-                <div className='banner-icons' title='More info'>
-                    <FontAwesomeIcon icon={faCircleInfo} />
+                <div className='banner-icons'>
+                    <FaInfoCircle />
                     <p>More Info</p>
                 </div>
 
