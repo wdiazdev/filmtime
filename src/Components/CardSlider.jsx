@@ -2,6 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import '../Styles/CardSlider.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper';
+import 'swiper/swiper-bundle.css';
 
 export default function CardSlider({ title, fetchData }) {
 
@@ -21,20 +25,23 @@ export default function CardSlider({ title, fetchData }) {
 
             <h2>{title}</h2>
 
-            <div className='slider'>
-
-                {nowPlaying.map((movie, id) => {
+            <Swiper
+                modules={[Navigation]}
+                navigation
+                spaceBetween={40}
+                slidesPerView={4}
+                speed={800}
+            >
+                {nowPlaying.map((movie) => {
                     return (
-                        <div
-                            key={id}
+                        <SwiperSlide
+                            key={movie.id}
                         >
                             <Card movie={movie} />
-                        </div>
+                        </SwiperSlide>
                     )
-
                 })}
-
-            </div>
+            </Swiper>
 
         </div>
     )
