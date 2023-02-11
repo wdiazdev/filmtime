@@ -1,34 +1,34 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { fetchMoviesByGenres } from '../Store';
+// import React from 'react'
+// import { useDispatch } from 'react-redux';
+// import { fetchMoviesByGenres } from '../Store';
 
-export default function Genres({ genres, type }) {
+// export default function Genres({ genres, type }) {
 
-    const dispatch = useDispatch();
+//     const dispatch = useDispatch();
 
-    return (
-        <div className='genres--container'>
+//     return (
+//         <div className='genres--container'>
 
-            <label htmlFor='genres'>Choose a genre:</label>
+//             <label htmlFor='genres'>Choose a genre:</label>
 
-            <select
-                id='genres'
-                onChange={e =>
-                    dispatch(fetchMoviesByGenres({ genre: e.target.value, type }))}
-            >
+//             <select
+//                 id='genres'
+//                 onChange={e =>
+//                     dispatch(fetchMoviesByGenres({ genre: e.target.value, type }))}
+//             >
 
-                {genres.map((genre) => {
-                    return (
-                        <option
-                            key={genre.id}
-                            value={genre.id}
-                        >
-                            {genre.name}
-                        </option>
-                    )
-                })}
-            </select>
+//                 {genres.map((genre) => {
+//                     return (
+//                         <option
+//                             key={genre.id}
+//                             value={genre.id}
+//                         >
+//                             {genre.name}
+//                         </option>
+//                     )
+//                 })}
+//             </select>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// };

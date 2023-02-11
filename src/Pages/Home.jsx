@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/Home.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import Slider from '../Components/Slider';
 import { sendRequest } from '../Utility/api';
 import axios from 'axios';
 import MovieBanner from '../Components/MovieBanner';

@@ -9,6 +9,6 @@ export const sendRequest = {
     trending: `https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&language=en-US&page=2`,
     horror: `https://api.themoviedb.org/3/search/movie?api_key=${API_Key}&language=en-US&query=horror&page=1&include_adult=false`,
     upcoming: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_Key}&language=en-US&page=1`,
-    nowPlaying: `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}&language=en-US&page=1`
+    nowPlaying: `${BASE_URL}movie/now_playing?api_key=${API_Key}&language=en-US&page=1`
 };
 
