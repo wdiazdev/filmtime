@@ -34,7 +34,7 @@ export default function NavBar() {
 
             <div className='nav--links'>
 
-                <Link to='/movies'>Movies</Link>
+                <Link to='/'>Movies</Link>
 
                 <Link to='/series'>Series</Link>
 

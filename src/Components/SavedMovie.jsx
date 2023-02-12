@@ -4,9 +4,12 @@ import { userAuth } from '../Context/AuthContext';
 import { db } from '../Utility/Firebase';
 import { FaInfoCircle, FaRegFrown } from 'react-icons/fa';
 import '../Styles/SavedMovie.css';
+import { useNavigate } from 'react-router-dom';
 export default function SavedMovies() {
 
     const [movies, setMovies] = useState([]);
+
+    const navigate = useNavigate();
 
     const { currentUser } = userAuth();
 
@@ -39,7 +42,7 @@ export default function SavedMovies() {
 
                         <div className='saved--movie--btn'>
 
-                            <FaInfoCircle title='More Info' />
+                            <FaInfoCircle title='More Info' onClick={() => navigate(`/show/${item?.id}`)} />
 
                             <FaRegFrown
                                 onClick={() => deleteSavedMovies(item.id)}
