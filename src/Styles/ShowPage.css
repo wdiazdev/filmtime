@@ -1,0 +1,88 @@
+.show--page--container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('/src/assets/account.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show--page--wrapper {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    height: 700px;
+    padding: 2rem;
+    border: 1px solid var(--silver);
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 20px 2px 4px, rgba(0, 0, 0, 0.6)25px 10px 5px 15px, rgba(0, 0, 0, 0.2) 1px -3px 0px inset;
+    border: 3px solid #333;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.back--btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+    color: var(--silver);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.back--btn:hover {
+    color: #fff;
+}
+
+.show--page--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    width: 400px;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.show--page--info>h3 {
+    font-size: 1.5rem;
+    font-family: var(--primary--font);
+}
+
+.show--page--info>p>span {
+    color: #00b4d8;
+}
+
+.show--page--info>a {
+    padding: 0.5rem 2rem;
+    border: 1px solid var(--silver);
+    width: max-content;
+    text-transform: uppercase;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.show--page--info>a:hover {
+    letter-spacing: 2px;
+    color: #00b4d8;
+}
+
+.show--page--img {
+    width: 400px;
+    height: 600px;
+    box-shadow: 0 0 25px #ffffff;
+}
+
+.show--page--img>img {
+    width: 100%;
+}

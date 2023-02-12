@@ -38,7 +38,7 @@ export default function NavBar() {
 
                 <Link to='/series'>Series</Link>
 
-                {currentUser ? <Link to='/mylist'>My List</Link> : null}
+                {currentUser ? <Link to='/mylist'>My Shows</Link> : null}
 
             </div>
 

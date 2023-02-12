@@ -1,0 +1,43 @@
+.account--container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('/src/assets/account.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner--container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+}
+
+.banner--container>h2 {
+    z-index: 1000;
+    font-size: 4rem;
+    font-family: var(--primary--font);
+}
+
+.banner--container>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    z-index: 5;
+}

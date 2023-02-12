@@ -4,11 +4,11 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import NavBar from './Components/NavBar';
-import Player from './Pages/Player';
 import Movies from './Pages/Movies';
 import Series from './Pages/Series';
-import MyList from './Pages/MyList';
+import Account from './Pages/Account';
 import ProtectedRoute from './Components/ProtectedRoute';
+import ShowPage from './Pages/ShowPage';
 
 function App() {
 
@@ -17,16 +17,15 @@ function App() {
       <NavBar />
       <Routes>
         <Route index path='/' element={<Home />} />
-        {/* <Route index path='/coin/:id' element={<CoinPage />} /> */}
+        <Route exact path='/show/:id' element={<ShowPage />} />
         <Route exact path='/Login' element={<Login />} />
         <Route exact path='/signup' element={<SignUp />} />
-        <Route exact path='/player' element={<Player />} />
         <Route exact path='/movies' element={<Movies />} />
         <Route exact path='/series' element={<Series />} />
         //! protected route
         <Route exact path='/mylist' element={
           <ProtectedRoute>
-            <MyList />
+            <Account />
           </ProtectedRoute>
         } />
 

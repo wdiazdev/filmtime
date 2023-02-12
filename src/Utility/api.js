@@ -12,6 +12,13 @@ export const sendRequest = {
 };
 
 
+export const searchMovie = (id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&language=en-US`
+
+
+export const SeriesRequest = {
+    nowPlaying: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_Key}&language=en-US&page=1`,
+};
+
 
 // genres
 // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US

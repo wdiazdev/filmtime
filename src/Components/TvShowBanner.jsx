@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/MovieBanner.css';
 import { FaInfoCircle } from 'react-icons/fa';
-import { sendRequest } from '../Utility/api';
+import { SeriesRequest } from '../Utility/api';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-export default function MovieBanner() {
+export default function TvShowBanner() {
 
     const [nowPlaying, setNowPlaying] = useState('');
 
     const navigate = useNavigate();
 
-    const fetchRandomMovie = async () => {
-        const { data } = await axios.get(sendRequest.nowPlaying);
-        setNowPlaying(data.results)
-    };
-
     useEffect(() => {
-        fetchRandomMovie();
+        axios.get(SeriesRequest.nowPlaying)
+            .then((request) => {
+                setNowPlaying(request.data.results)
+            })
     }, []);
 
     // console.log(nowPlaying);
@@ -48,9 +46,9 @@ export default function MovieBanner() {
 
             <div className='movie--banner--info'>
 
-                <h1>{randomMovie?.title}</h1>
+                <h1>{randomMovie?.name}</h1>
 
-                <p><span>Released:</span> {randomMovie?.release_date}</p>
+                <p><span>Released:</span> {randomMovie?.first_air_date}</p>
 
                 <p>{truncateString(randomMovie?.overview, 200)}</p>
 

@@ -3,6 +3,7 @@ import { FaRegHeart, FaHeart, FaInfoCircle } from 'react-icons/fa';
 import { userAuth } from '../Context/AuthContext';
 import { db } from '../Utility/Firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function Card({ movie }) {
 
@@ -11,6 +12,8 @@ export default function Card({ movie }) {
     const [save, setSaved] = useState(false);
 
     const { currentUser } = userAuth();
+
+    const navigate = useNavigate();
 
     const dbUserID = doc(db, 'users', `${currentUser?.email}`);
 
@@ -64,7 +67,7 @@ export default function Card({ movie }) {
 
                         {like ? <FaHeart color='#f40612' /> : <FaRegHeart />}
 
-                        <FaInfoCircle />
+                        <FaInfoCircle onClick={() => navigate(`/show/${movie?.id}`)} />
 
                     </div>
 
