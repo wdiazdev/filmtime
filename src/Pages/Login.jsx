@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth } from '../Context/AuthContext';
+import { userAuth } from '../Context/AuthContext';
 
 export default function Login() {
 
@@ -10,7 +10,7 @@ export default function Login() {
 
     const passwordRef = useRef();
 
-    const { signIn } = UserAuth();
+    const { signIn } = userAuth();
 
     const navigate = useNavigate();
 

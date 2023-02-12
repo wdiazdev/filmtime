@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/SignUp.css';
-import { UserAuth } from '../Context/AuthContext';
+import { userAuth } from '../Context/AuthContext';
 
 export default function SignUp() {
 
@@ -13,7 +13,7 @@ export default function SignUp() {
 
     const passwordConfirmRef = useRef();
 
-    const { createUser } = UserAuth();
+    const { createUser } = userAuth();
 
     const navigate = useNavigate();
 

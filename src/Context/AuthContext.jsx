@@ -7,36 +7,36 @@ import {
     sendPasswordResetEmail,
 } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
-import { firebaseAuth, db } from '../Utility/Firebase';
+import { auth, db } from '../Utility/Firebase';
 
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
 
-    const [user, setUser] = useState({});
+    const [currentUser, setCurrentUser] = useState();
 
     const createUser = (email, password) => {
-        createUserWithEmailAndPassword(firebaseAuth, email, password);
+        createUserWithEmailAndPassword(auth, email, password);
         setDoc(doc(db, 'users', email), {
             savedMovies: []
         })
     };
 
-    const signIn = (email, password, name) => {
-        return signInWithEmailAndPassword(firebaseAuth, email, password)
+    const signIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     const logout = () => {
-        return signOut(firebaseAuth)
+        return signOut(auth)
     }
 
     const resetPassword = (email) => {
-        return sendPasswordResetEmail(firebaseAuth, email)
+        return sendPasswordResetEmail(auth, email)
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-            setUser(currentUser);
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setCurrentUser(user);
         });
         return () => {
             unsubscribe();
@@ -48,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
         logout,
         signIn,
         resetPassword,
-        user,
+        currentUser
     }
 
     return (
@@ -59,6 +59,6 @@ export const AuthContextProvider = ({ children }) => {
     );
 };
 
-export const UserAuth = () => {
+export const userAuth = () => {
     return useContext(UserContext);
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaRegHeart, FaHeart, FaInfoCircle } from 'react-icons/fa';
-import { UserAuth } from '../Context/AuthContext';
+import { userAuth } from '../Context/AuthContext';
 import { db } from '../Utility/Firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 
@@ -10,26 +10,28 @@ export default function Card({ movie }) {
 
     const [save, setSaved] = useState(false);
 
-    const { user } = UserAuth();
+    const { currentUser } = userAuth();
 
-    const dbUserID = doc(db, 'users', `${user?.email}`);
+    const dbUserID = doc(db, 'users', `${currentUser?.email}`);
 
     const handleSaveMovie = async () => {
-        if (user?.email) {
+        if (currentUser?.email) {
             setLike(!like)
             setSaved(true)
             await updateDoc(dbUserID, {
                 savedMovies: arrayUnion({
                     id: movie.id,
                     title: movie.title,
-                    img: movie.poster_path
+                    img: movie.poster_path,
+                    rating: movie.vote_average,
+                    released: movie.release_date
                 })
             })
         } else {
             alert('Please Login');
         }
     };
-    console.log(movie)
+
     return (
         <div className='card--container'>
 

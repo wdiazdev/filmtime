@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../Styles/NavBar.css';
-import { UserAuth } from '../Context/AuthContext';
+import { userAuth } from '../Context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +9,7 @@ export default function NavBar() {
 
     const [error, setError] = useState(false);
 
-    const { user, logout } = UserAuth();
+    const { currentUser, logout } = userAuth();
 
     const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ export default function NavBar() {
 
                 <Link to='/series'>Series</Link>
 
-                {user ? <Link to='/mylist'>My List</Link> : null}
+                {currentUser ? <Link to='/mylist'>My List</Link> : null}
 
             </div>
 
@@ -65,7 +65,7 @@ export default function NavBar() {
                     />
                 </div>
 
-                {user ?
+                {currentUser ?
                     <button
                         className='logout--btn'
                         onClick={handleLogout}
