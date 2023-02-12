@@ -15,7 +15,7 @@ export default function MovieBanner() {
             })
     }, []);
 
-    console.log(nowPlaying);
+    // console.log(nowPlaying);
 
     //? randomMovie = to get random movie from the API request
 

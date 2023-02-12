@@ -8,15 +8,13 @@
     background-size: cover;
 }
 
-.signup--container {}
-
 form {
     width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     margin-bottom: 2rem;
     gap: 1rem;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
@@ -24,11 +22,11 @@ form {
     border: 2px solid var(--silver);
 }
 
-form input {
+input {
     width: 100%;
     padding: 1rem;
-    outline: none;
     background: transparent;
+    outline: none;
     border: none;
     border-bottom: 2px solid var(--silver);
     font-size: 1rem;

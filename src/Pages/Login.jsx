@@ -35,14 +35,12 @@ export default function Login() {
         <div className='signup--container'>
 
             <form
-                className='form'
                 onSubmit={handleSignIn}
             >
                 <h2 className='signup--header'>Login</h2>
 
                 <input
                     type='email'
-                    id='email'
                     placeholder='Email Address'
                     ref={emailRef}
                     required
@@ -50,7 +48,6 @@ export default function Login() {
 
                 <input
                     type='password'
-                    id='password'
                     placeholder='Password'
                     ref={passwordRef}
                     required
