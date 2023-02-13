@@ -62,10 +62,9 @@ export default function Card({ movie }) {
 
                     <div
                         className='card--icons'
-                        onClick={handleSaveMovie}
                     >
 
-                        {like ? <FaHeart color='#f40612' /> : <FaRegHeart />}
+                        {like ? <FaHeart color='#f40612' /> : <FaRegHeart onClick={handleSaveMovie} />}
 
                         <FaInfoCircle onClick={() => navigate(`/show/${movie?.id}`)} />
 

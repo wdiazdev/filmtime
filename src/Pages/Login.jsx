@@ -35,6 +35,7 @@ export default function Login() {
         <div className='signup--container'>
 
             <form
+                className='form'
                 onSubmit={handleSignIn}
             >
                 <h2 className='signup--header'>Login</h2>

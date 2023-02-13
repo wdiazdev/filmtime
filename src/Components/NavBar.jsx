@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../Styles/NavBar.css';
 import { userAuth } from '../Context/AuthContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
+import { BsSearch, BsPower } from 'react-icons/Bs';
+import { RiAccountCircleFill } from 'react-icons/Ri';
+
 
 export default function NavBar() {
 
@@ -56,7 +57,7 @@ export default function NavBar() {
 
                 <div className='search'>
                     <button>
-                        <FontAwesomeIcon icon={faSearch} />
+                        <BsSearch />
                     </button>
 
                     <input
@@ -70,15 +71,15 @@ export default function NavBar() {
                         className='logout--btn'
                         onClick={handleLogout}
                     >
-                        <FontAwesomeIcon icon={faPowerOff} />
+                        <BsPower />
                     </button> :
 
-                    <Link
-                        to='/login'
-                        className='login--btn'
+                    <button
+                        className='logout--btn'
+                        onClick={() => navigate('/Login')}
                     >
-                        <FontAwesomeIcon icon={faUser} />
-                    </Link>
+                        <RiAccountCircleFill />
+                    </button>
                 }
 
                 {error && <p className='signup--error'>{error}</p>}

@@ -22,15 +22,19 @@ form {
     border: 2px solid var(--silver);
 }
 
-input {
+.form input {
     width: 100%;
     padding: 1rem;
     background: transparent;
     outline: none;
-    border: none;
-    border-bottom: 2px solid var(--silver);
+    border: 1px solid var(--secondary--color);
+    border-radius: 1rem;
     font-size: 1rem;
     color: #fff;
+}
+
+.form input:focus {
+    box-shadow: 0 0 10px var(--secondary--color);
 }
 
 form input::placeholder {

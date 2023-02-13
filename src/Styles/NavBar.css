@@ -43,7 +43,7 @@
 
 .nav--right {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     align-items: center;
     gap: 1rem;
 }
@@ -60,6 +60,7 @@
 }
 
 .search>button {
+    display: flex;
     background: transparent;
     border: none;
     outline: none;
@@ -77,12 +78,13 @@
 }
 
 .logout--btn {
+    display: flex;
     background: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: 0.3s ease-out;
 }
 
@@ -92,7 +94,7 @@
 
 .login--btn {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: 0.3s ease-out;
 }
 
