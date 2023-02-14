@@ -17,6 +17,8 @@ export const searchMovie = (id) => `https://api.themoviedb.org/3/movie/${id}?api
 
 export const SeriesRequest = {
     nowPlaying: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_Key}&language=en-US&page=1`,
+    popular: `https://api.themoviedb.org/3/tv/popular?api_key=${API_Key}&language=en-US&page=1`,
+    topRated: `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_Key}&language=en-US&page=1`,
 };
 
 
