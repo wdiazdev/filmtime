@@ -5,7 +5,7 @@ import { SeriesRequest } from '../Utility/api';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-export default function TvShowBanner() {
+export default function ShowBanner() {
 
     const [nowPlaying, setNowPlaying] = useState('');
 

@@ -39,6 +39,7 @@
     transform: rotate(-15deg);
     color: #00b4d8;
     font-weight: 700;
+    font-family: var(--primary--font);
 }
 
 .nav--right {

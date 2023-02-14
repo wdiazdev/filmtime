@@ -32,6 +32,12 @@ export default function ShowPage() {
 
             <div className='show--page--wrapper'>
 
+                <img
+                    src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+                    alt={movie?.title}
+                    className='show--page--wrapper--img'
+                />
+
                 <BsBackspaceFill className='back--btn' onClick={() => navigate(-1)} />
 
                 <div className='show--page--info'>

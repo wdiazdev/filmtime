@@ -6,9 +6,10 @@ import { FaInfoCircle, FaRegFrown } from 'react-icons/fa';
 import '../Styles/SavedMovie.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function SavedMovies() {
 
-    const [movies, setMovies] = useState([]);
+export default function savedShow() {
+
+    const [show, setShow] = useState([]);
 
     const navigate = useNavigate();
 
@@ -16,17 +17,17 @@ export default function SavedMovies() {
 
     useEffect(() => {
         onSnapshot(doc(db, 'users', `${currentUser?.email}`), (doc => {
-            setMovies(doc.data()?.savedMovies);
+            setShow(doc.data()?.savedShows);
         }))
     }, [currentUser?.email]);
 
-    const movieRef = doc(db, 'users', `${currentUser?.email}`);
+    const showRef = doc(db, 'users', `${currentUser?.email}`);
 
-    const deleteSavedMovies = async (movieId) => {
+    const deleteSavedShow = async (showId) => {
         try {
-            const deletedMovie = movies.filter((i) => i.id !== movieId);
-            await updateDoc(movieRef, {
-                savedMovies: deletedMovie
+            const deletedMovie = show.filter((i) => i.id !== showId);
+            await updateDoc(showRef, {
+                savedShows: deletedMovie
             });
         } catch (err) {
             console.log(err);
@@ -35,18 +36,18 @@ export default function SavedMovies() {
 
     return (
         <>
-            {movies.map((item, id) => {
+            {show.map((show, id) => {
                 return (
                     <div className='saved--movie--container'>
 
-                        <img key={id} src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item.title} />
+                        <img key={id} src={`https://image.tmdb.org/t/p/w500/${show?.img}`} alt={show.title} />
 
                         <div className='saved--movie--btn'>
 
-                            <FaInfoCircle title='More Info' onClick={() => navigate(`/show/${item?.id}`)} />
+                            <FaInfoCircle title='More Info' onClick={() => navigate(`/show/${show?.id}`)} />
 
                             <FaRegFrown
-                                onClick={() => deleteSavedMovies(item.id)}
+                                onClick={() => deleteSavedShow(show.id)}
                                 title='Remove'
                             />
 

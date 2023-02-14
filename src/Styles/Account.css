@@ -6,13 +6,15 @@
     background-size: cover;
 }
 
+.saved--movie--wrapper {}
+
 .banner--container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .banner--container>h2 {

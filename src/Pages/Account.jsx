@@ -2,7 +2,8 @@ import React from 'react'
 import { Banner } from '../Components/Banner';
 import '../Styles/Account.css';
 import BgImg from '../assets/banner1.jpg';
-import SavedMovies from '../Components/SavedMovie';
+import SavedMovie from '../Components/SavedMovie';
+import SavedShow from '../Components/SavedShow';
 
 export default function Account() {
 
@@ -13,7 +14,10 @@ export default function Account() {
             <Banner title='Your Shows' BgImg={BgImg} />
 
             <div className='saved--movie--wrapper'>
-                <SavedMovies />
+
+                <SavedMovie />
+
+                <SavedShow />
             </div>
 
         </div>
