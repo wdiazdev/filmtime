@@ -51,35 +51,6 @@
     gap: 1rem;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0.5rem;
-    padding-right: 1rem;
-    border: 1px solid var(--secondary--color);
-    border-radius: 10px;
-    background: #000;
-}
-
-.search>button {
-    display: flex;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-.search>input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    color: #fff;
-    background: transparent;
-    outline: none;
-    border: none;
-}
-
 .logout--btn {
     display: flex;
     background: transparent;

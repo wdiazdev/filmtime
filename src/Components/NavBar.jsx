@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../Styles/NavBar.css';
 import { userAuth } from '../Context/AuthContext';
-import { BsSearch, BsPower } from 'react-icons/Bs';
+import { BsPower } from 'react-icons/Bs';
 import { RiAccountCircleFill } from 'react-icons/Ri';
+import Search from './Search';
 
 
 export default function NavBar() {
@@ -31,61 +32,54 @@ export default function NavBar() {
     }, 5000)
 
     return (
-        <nav className='nav--container'>
+        <>
+            <nav className='nav--container'>
 
-            <div className='nav--links'>
+                <div className='nav--links'>
 
-                <Link to='/'>Movies</Link>
+                    <Link to='/'>Movies</Link>
 
-                <Link to='/series'>Series</Link>
+                    <Link to='/series'>Series</Link>
 
-                {currentUser ? <Link to='/mylist'>My Shows</Link> : null}
+                    {currentUser ? <Link to='/mylist'>My Shows</Link> : null}
 
-            </div>
-
-            <div className='logo--wrapper'>
-                <Link
-                    to='/'
-                    className='logo'
-                >
-                    <h3>Film</h3>
-                    <span>Time</span>
-                </Link>
-            </div>
-
-            <div className='nav--right'>
-
-                <div className='search'>
-                    <button>
-                        <BsSearch />
-                    </button>
-
-                    <input
-                        type="text"
-                        placeholder='Search'
-                    />
                 </div>
 
-                {currentUser ?
-                    <button
-                        className='logout--btn'
-                        onClick={handleLogout}
+                <div className='logo--wrapper'>
+                    <Link
+                        to='/'
+                        className='logo'
                     >
-                        <BsPower />
-                    </button> :
+                        <h3>Film</h3>
+                        <span>Time</span>
+                    </Link>
+                </div>
 
-                    <button
-                        className='logout--btn'
-                        onClick={() => navigate('/Login')}
-                    >
-                        <RiAccountCircleFill />
-                    </button>
-                }
+                <div className='nav--right'>
 
-                {error && <p className='signup--error'>{error}</p>}
+                    <Search />
 
-            </div>
+                    {currentUser ?
+                        <button
+                            className='logout--btn'
+                            onClick={handleLogout}
+                        >
+                            <BsPower />
+                        </button> :
 
-        </nav >
+                        <button
+                            className='logout--btn'
+                            onClick={() => navigate('/Login')}
+                        >
+                            <RiAccountCircleFill />
+                        </button>
+                    }
+
+                    {error && <p className='signup--error'>{error}</p>}
+
+                </div>
+
+            </nav >
+        </>
     )
 };

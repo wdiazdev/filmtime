@@ -12,7 +12,7 @@ export const sendRequest = {
 };
 
 
-export const searchMovie = (id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&language=en-US`
+export const searchMovie = `https://api.themoviedb.org/3/search/movie?&api_key=${API_Key}&query=`
 
 
 export const SeriesRequest = {
@@ -24,6 +24,3 @@ export const SeriesRequest = {
 
 // genres
 // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
-
-// MOVIE ID FOR MOVIE Page
-// https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
