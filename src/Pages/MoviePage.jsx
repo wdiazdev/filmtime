@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { searchMovie } from '../Utility/api';
+import { moviePageApi } from '../Utility/api';
 import '../Styles/ShowPage.css';
 import { formatCurrency } from '../Utility/FormatCurrency';
 import { BiCameraMovie } from 'react-icons/Bi';
 import { BsBackspaceFill } from 'react-icons/Bs';
 
-export default function ShowPage() {
+export default function MoviePage() {
 
     const [movie, setMovie] = useState();
 
@@ -16,7 +16,7 @@ export default function ShowPage() {
     const navigate = useNavigate();
 
     const fetchMovie = async () => {
-        const { data } = await axios.get(searchMovie(id));
+        const { data } = await axios.get(moviePageApi(id));
         setMovie(data)
         // console.log(data);
     };

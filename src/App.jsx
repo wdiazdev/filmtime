@@ -7,7 +7,7 @@ import Movies from './Pages/Movies';
 import Series from './Pages/Series';
 import Account from './Pages/Account';
 import ProtectedRoute from './Components/ProtectedRoute';
-import ShowPage from './Pages/ShowPage';
+import MoviePage from './Pages/MoviePage';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route index path='/' element={<Movies />} />
-        <Route exact path='/show/:id' element={<ShowPage />} />
+        <Route exact path='/show/:id' element={<MoviePage />} />
         <Route exact path='/Login' element={<Login />} />
         <Route exact path='/signup' element={<SignUp />} />
         <Route exact path='/series' element={<Series />} />

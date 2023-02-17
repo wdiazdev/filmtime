@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/Bs';
-import { useParams } from 'react-router-dom';
 import '../Styles/Search.css';
 import { searchMovie } from '../Utility/api';
 import SearchResults from './SearchResults';
