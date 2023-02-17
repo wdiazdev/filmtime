@@ -27,7 +27,8 @@ export const Player = () => {
 
 
     const renderTrailer = () => {
-        const trailer = trailerVideo.videos.results.find(video => video.name === 'Official Trailer')
+        const trailer = trailerVideo.videos.results.find(
+            video => video.name === 'official trailer')
         return (
             < YouTube
                 videoId={trailer.key}
