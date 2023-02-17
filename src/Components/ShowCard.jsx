@@ -64,7 +64,7 @@ export default function ShowCard({ show }) {
 
                         {like ? <FaHeart color='#f40612' /> : <FaRegHeart onClick={handleSaveMovie} />}
 
-                        <FaInfoCircle onClick={() => navigate(`/show/${show?.id}`)} />
+                        <FaInfoCircle onClick={() => navigate(`/movie/${show?.id}`)} />
 
                     </div>
 

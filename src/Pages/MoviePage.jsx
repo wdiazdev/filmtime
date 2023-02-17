@@ -18,7 +18,7 @@ export default function MoviePage() {
     const fetchMovie = async () => {
         const { data } = await axios.get(moviePageApi(id));
         setMovie(data)
-        console.log(data);
+        // console.log(data);
     };
 
     useEffect(() => {

@@ -54,10 +54,9 @@ export default function ShowBanner() {
 
                 <div
                     className='banner-icons'
-                    onClick={() => navigate(`/show/${randomMovie?.id}`)}
+                    onClick={() => navigate(`/movie/${randomMovie?.id}`)}
                 >
                     <FaInfoCircle />
-                    <p>More Info</p>
                 </div>
 
             </div>
