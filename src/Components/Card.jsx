@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaRegHeart, FaHeart, FaInfoCircle } from 'react-icons/fa';
+import { FaRegHeart, FaHeart, FaInfoCircle, FaPlay } from 'react-icons/fa';
 import { userAuth } from '../Context/AuthContext';
 import { db } from '../Utility/Firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
@@ -64,7 +64,9 @@ export default function Card({ movie }) {
 
                         {like ? <FaHeart color='#f40612' /> : <FaRegHeart onClick={handleSaveMovie} />}
 
-                        <FaInfoCircle onClick={() => navigate(`/show/${movie?.id}`)} />
+                        <FaInfoCircle onClick={() => navigate(`/movie/${movie?.id}`)} />
+
+                        <FaPlay onClick={() => navigate(`/player/${movie?.id}`)} />
 
                     </div>
 

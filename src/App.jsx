@@ -8,6 +8,7 @@ import Series from './Pages/Series';
 import Account from './Pages/Account';
 import ProtectedRoute from './Components/ProtectedRoute';
 import MoviePage from './Pages/MoviePage';
+import { Player } from './Pages/Player';
 
 function App() {
 
@@ -16,10 +17,11 @@ function App() {
       <NavBar />
       <Routes>
         <Route index path='/' element={<Movies />} />
-        <Route exact path='/show/:id' element={<MoviePage />} />
+        <Route exact path='/movie/:id' element={<MoviePage />} />
+        <Route exact path='/series' element={<Series />} />
+        <Route exact path='/player/:id' element={<Player />} />
         <Route exact path='/Login' element={<Login />} />
         <Route exact path='/signup' element={<SignUp />} />
-        <Route exact path='/series' element={<Series />} />
         //! protected route
         <Route exact path='/mylist' element={
           <ProtectedRoute>

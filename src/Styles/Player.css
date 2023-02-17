@@ -1,0 +1,30 @@
+.player--container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player--container>svg {
+    position: absolute;
+    top: 5.5rem;
+    left: 1rem;
+    z-index: 100;
+    font-size: 2rem;
+    color: var(--silver);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.player--container>svg:hover {
+    color: #fff;
+}
+
+.youtube--container {
+    position: absolute;
+    top: 8rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

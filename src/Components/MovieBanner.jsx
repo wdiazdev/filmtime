@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/MovieBanner.css';
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaPlay } from 'react-icons/fa';
 import { sendRequest } from '../Utility/api';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 export default function MovieBanner() {
 
     const [nowPlaying, setNowPlaying] = useState('');
@@ -54,12 +53,9 @@ export default function MovieBanner() {
 
                 <p>{truncateString(randomMovie?.overview, 200)}</p>
 
-                <div
-                    className='banner-icons'
-                    onClick={() => navigate(`/show/${randomMovie?.id}`)}
-                >
-                    <FaInfoCircle />
-                    <p>More Info</p>
+                <div className='banner-icons'>
+                    <FaInfoCircle onClick={() => navigate(`/movie/${randomMovie?.id}`)} />
+                    <FaPlay onClick={() => navigate(`/player/${randomMovie?.id}`)} />
                 </div>
 
             </div>

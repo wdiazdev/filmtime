@@ -18,8 +18,7 @@ export const SeriesRequest = {
 
 export const searchMovie = `https://api.themoviedb.org/3/search/movie?&api_key=${API_Key}&query=`
 
-export const moviePageApi = (id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&language=en-US`
+export const moviePageApi = (id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&append_to_response=videos`
 
-export const movieVideoApi = (id) => `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_Key}}&language=en-US`
 
 

@@ -1,7 +1,10 @@
 import React from 'react'
 import { FaInfoCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchResults({ movie }) {
+
+    const navigate = useNavigate();
 
     return (
         <div
@@ -13,7 +16,7 @@ export default function SearchResults({ movie }) {
 
             {movie?.length > 0 ? <h3>Your Results</h3> : <h3>That's a miss</h3>}
 
-            {movie.slice(0, 10).map((result) => {
+            {movie.slice(0, 15).map((result) => {
                 return (
                     <div className='result--card' key={result.id}>
 
@@ -26,7 +29,7 @@ export default function SearchResults({ movie }) {
                             <h3>{result?.title}</h3>
 
                             <div className='result--icons'>
-                                <FaInfoCircle />
+                                <FaInfoCircle onClick={() => navigate(`/movie/${result?.id}`)} />
                             </div>
 
                         </div>

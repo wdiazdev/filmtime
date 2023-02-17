@@ -44,24 +44,18 @@
 .banner-icons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-    border: 1px solid var(--silver);
-    color: 1px solid var(--silver);
-    font-size: 1.2rem;
-    width: fit-content;
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    justify-content: flex-start;
+    gap: 1.5rem;
 }
 
 .banner-icons>svg {
-    font-size: 1.5rem;
+    color: var(--silver);
+    font-size: 2rem;
+    width: fit-content;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.banner-icons:hover {
+.banner-icons>svg:hover {
     color: #fff;
-    letter-spacing: 2px;
-    gap: 0.5rem;
 }
