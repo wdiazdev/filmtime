@@ -24,7 +24,12 @@
     color: var(--secondary--color);
 }
 
+.logo--wrapper {
+    position: relative;
+}
+
 .logo {
+    position: relative;
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -42,6 +47,17 @@
     color: #00b4d8;
     font-weight: 700;
     font-family: var(--primary--font);
+}
+
+.logo--wrapper>svg {
+    position: absolute;
+    top: 0;
+    right: 0.2rem;
+    font-size: 3rem;
+    opacity: 0.8;
+    transform: rotate(50deg);
+    z-index: -1;
+    color: var(--silver);
 }
 
 .nav--right {

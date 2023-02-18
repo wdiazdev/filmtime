@@ -5,7 +5,7 @@ import { userAuth } from '../Context/AuthContext';
 import { BsPower } from 'react-icons/Bs';
 import { RiAccountCircleFill } from 'react-icons/Ri';
 import Search from './Search';
-
+import { GiFilmStrip } from 'react-icons/Gi'
 
 export default function NavBar() {
 
@@ -53,6 +53,7 @@ export default function NavBar() {
                         <h3>Film</h3>
                         <span>Time</span>
                     </Link>
+                    <GiFilmStrip />
                 </div>
 
                 <div className='nav--right'>
