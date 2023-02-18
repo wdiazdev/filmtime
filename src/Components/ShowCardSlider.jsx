@@ -28,9 +28,33 @@ export default function ShowCardSlider({ fetchData, title }) {
             <Swiper
                 modules={[Navigation]}
                 navigation
-                spaceBetween={40}
-                slidesPerView={4}
-                speed={800}
+                className='swiper--container'
+                breakpoints={{
+                    1400: {
+                        slidesPerView: 5,
+                        spaceBetween: 0,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    880: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    }
+                }}
             >
                 {nowPlaying.map((show) => {
                     return (

@@ -4,8 +4,8 @@ import Card from './Card';
 import '../Styles/CardSlider.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
+import { Navigation } from 'swiper';
 
 export default function CardSlider({ title, fetchData }) {
 
@@ -28,9 +28,33 @@ export default function CardSlider({ title, fetchData }) {
             <Swiper
                 modules={[Navigation]}
                 navigation
-                spaceBetween={40}
-                slidesPerView={4}
-                speed={800}
+                className='swiper--container'
+                breakpoints={{
+                    1400: {
+                        slidesPerView: 5,
+                        spaceBetween: 0,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    880: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    }
+                }}
             >
                 {nowPlaying.map((movie) => {
                     return (
