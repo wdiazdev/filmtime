@@ -18,7 +18,7 @@ export const Player = () => {
     const fetchMovieVideo = async () => {
         const { data } = await axios.get(moviePageApi(id));
         setTrailerVideo(data);
-        // console.log(data);
+        console.log(data);
     };
 
     useEffect(() => {
@@ -27,9 +27,11 @@ export const Player = () => {
 
 
     const renderTrailer = () => {
-        const trailer = trailerVideo.videos.results.find(
+
+        const trailer = trailerVideo?.videos.results.find(
             video => video.name === 'official trailer' ||
                 video.name === 'Official Trailer')
+
         return (
             < YouTube
                 videoId={trailer.key}
@@ -51,7 +53,7 @@ export const Player = () => {
 
             <BsBackspaceFill onClick={() => navigate(-1)} />
 
-            {trailerVideo?.videos ? renderTrailer() : null}
+            {trailerVideo?.videos ? renderTrailer() : <h2>No Video Available</h2>}
 
         </div>
     )

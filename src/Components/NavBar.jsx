@@ -4,7 +4,6 @@ import '../Styles/NavBar.css';
 import { userAuth } from '../Context/AuthContext';
 import { BsPower } from 'react-icons/Bs';
 import { RiAccountCircleFill } from 'react-icons/Ri';
-import Search from './Search';
 import { GiFilmStrip } from 'react-icons/Gi'
 
 export default function NavBar() {
@@ -57,8 +56,6 @@ export default function NavBar() {
                 </div>
 
                 <div className='nav--right'>
-
-                    <Search />
 
                     {currentUser ?
                         <button

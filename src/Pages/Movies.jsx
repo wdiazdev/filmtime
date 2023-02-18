@@ -3,6 +3,7 @@ import CardSlider from '../Components/CardSlider';
 import { sendRequest } from '../Utility/api';
 import { Loader } from '../Components/Loader';
 import { useEffect, useState } from 'react';
+import Search from '../Components/Search';
 
 export default function Movies() {
 
@@ -12,7 +13,7 @@ export default function Movies() {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 1000)
+        }, 500)
     }, []);
 
     return (
@@ -22,6 +23,8 @@ export default function Movies() {
 
                     <>
                         <MovieBanner />
+
+                        <Search />
 
                         <CardSlider title={'Now Playing'} fetchData={sendRequest.nowPlaying} />
 

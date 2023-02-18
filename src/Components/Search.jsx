@@ -1,15 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { BsSearch } from 'react-icons/Bs';
+import { BsSearch, BsInfoCircleFill } from 'react-icons/Bs';
+import { FaPlay } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import '../Styles/Search.css';
 import { searchMovie } from '../Utility/api';
-import SearchResults from './SearchResults';
 
 export default function Search() {
 
     const [movie, setMovie] = useState([]);
 
     const [search, setSearch] = useState('');
+
+    const navigate = useNavigate();
 
     const searchedMovie = () => {
         axios.get(searchMovie + search)
@@ -32,23 +35,58 @@ export default function Search() {
     };
 
     return (
-        <>
-            <div className='search-container'>
-                <button>
-                    <BsSearch />
-                </button>
+        <div className='search--container'>
+
+            <div className='search-box'>
+
+                <button className='btn-search'><BsSearch /></button>
 
                 <input
-                    type="text"
-                    placeholder='Search Ex. Avatar'
+                    type='text'
+                    className='input-search'
+                    placeholder='Search for a movie...'
                     value={search}
                     onChange={handleSearch}
                 />
-            </div>
 
-            <div className='search--results--container'>
-                <SearchResults movie={movie} />
-            </div>
-        </>
+            </div >
+
+            <>
+
+                {movie?.length > 0 ?
+                    <h2 className='result-error'>Your Results</h2> :
+                    null
+                }
+
+                <div className='search--result'>
+                    {movie.slice(0, 5).map((result) => {
+                        return (
+                            <div className='result--card' key={result.id}>
+
+                                <img src={`https://image.tmdb.org/t/p/w500/${result?.poster_path}`} alt={result?.title} />
+
+                                <div className='result--overlay'></div>
+
+                                <div className='result--info'>
+
+                                    <h3>{result?.title}</h3>
+
+                                    <div className='result--icons'>
+                                        <BsInfoCircleFill onClick={() => navigate(`/movie/${result?.id}`)} />
+
+                                        <FaPlay onClick={() => navigate(`/player/${result?.id}`)} />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        )
+                    })}
+
+                </div >
+
+            </>
+
+        </div>
     )
 };
