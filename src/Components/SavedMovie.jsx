@@ -43,7 +43,7 @@ export default function SavedMovies() {
 
                         <div className='saved--movie--btn'>
 
-                            <FaInfoCircle title='More Info' onClick={() => navigate(`/show/${item?.id}`)} />
+                            <FaInfoCircle title='More Info' onClick={() => navigate(`/movie/${item?.id}`)} />
 
                             <FaRegFrown
                                 onClick={() => deleteSavedMovies(item.id)}

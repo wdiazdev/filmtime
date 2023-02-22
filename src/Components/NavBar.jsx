@@ -31,8 +31,20 @@ export default function NavBar() {
     }, 5000)
 
     return (
-        <>
-            <nav className='nav--container'>
+        <nav className='nav--container'>
+
+            <div className='logo--wrapper'>
+                <Link
+                    to='/'
+                    className='logo'
+                >
+                    <h3>Film</h3>
+                    <span>Time</span>
+                </Link>
+                <GiFilmStrip />
+            </div>
+
+            <div className='nav--links'>
 
                 <div className='nav--links'>
 
@@ -41,21 +53,6 @@ export default function NavBar() {
                     <Link to='/series'>Series</Link>
 
                     {currentUser ? <Link to='/mylist'>My Shows</Link> : null}
-
-                </div>
-
-                <div className='logo--wrapper'>
-                    <Link
-                        to='/'
-                        className='logo'
-                    >
-                        <h3>Film</h3>
-                        <span>Time</span>
-                    </Link>
-                    <GiFilmStrip />
-                </div>
-
-                <div className='nav--right'>
 
                     {currentUser ?
                         <button
@@ -66,7 +63,7 @@ export default function NavBar() {
                         </button> :
 
                         <button
-                            className='logout--btn'
+                            className='login--btn'
                             onClick={() => navigate('/Login')}
                         >
                             <RiAccountCircleFill />
@@ -77,7 +74,8 @@ export default function NavBar() {
 
                 </div>
 
-            </nav >
-        </>
+            </div>
+
+        </nav >
     )
 };

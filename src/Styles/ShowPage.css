@@ -7,25 +7,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem 4rem;
+    padding: 6rem 4rem;
 }
 
 .show--page--wrapper {
     position: relative;
     max-width: 1240px;
     margin: 0 auto;
-    width: 100%;
-    height: 700px;
-    padding: 4rem;
-    border: 1px solid var(--silver);
+    padding: 4rem 2rem;
+    border: 3px solid var(--silver);
     border-radius: 2rem;
     box-shadow: rgba(0, 0, 0, 0.4) 20px 2px 4px, rgba(0, 0, 0, 0.6)25px 10px 5px 15px, rgba(0, 0, 0, 0.2) 1px -3px 0px inset;
-    border: 3px solid #333;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     overflow: hidden;
 }
 
@@ -37,12 +34,13 @@
     height: 100%;
     z-index: 1;
     opacity: 0.2;
+    object-fit: cover;
 }
 
 .back--btn {
     position: absolute;
-    top: 2rem;
-    left: 2rem;
+    top: 1rem;
+    left: 1rem;
     font-size: 2rem;
     color: var(--silver);
     transition: 0.3s ease-in-out;
@@ -58,8 +56,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 1rem;
-    width: 400px;
+    padding: 1rem 2rem;
+    width: 100%;
     gap: 1.5rem;
     font-size: 1.2rem;
     z-index: 1;
@@ -99,5 +97,38 @@
 }
 
 .show--page--img>img {
-    width: 100%;
+    width: 400px;
+    height: 600px;
+}
+
+@media screen and (max-width:1000px) {
+    .show--page--container {
+        padding: 6rem 1rem;
+    }
+
+    .show--page--wrapper {
+        padding: 3rem 1rem;
+        border: 1px solid var(--silver);
+        box-shadow: none;
+        background: none;
+        flex-direction: column;
+    }
+
+    .show--page--info {
+        padding: 1rem 0rem;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    .show--page--img {
+        width: 300px;
+        height: 400px;
+        box-shadow: 0 0 15px #ffffff;
+        z-index: 1;
+    }
+
+    .show--page--img>img {
+        width: 300px;
+        height: 400px;
+    }
 }

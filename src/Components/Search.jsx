@@ -59,7 +59,7 @@ export default function Search() {
                 }
 
                 <div className='search--result'>
-                    {movie.slice(0, 5).map((result) => {
+                    {movie.slice(0, 6).map((result) => {
                         return (
                             <div className='result--card' key={result.id}>
 

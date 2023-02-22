@@ -42,11 +42,7 @@ export default function CardSlider({ title, fetchData }) {
                         slidesPerView: 3,
                         spaceBetween: 0,
                     },
-                    880: {
-                        slidesPerView: 3,
-                        spaceBetween: 0,
-                    },
-                    640: {
+                    550: {
                         slidesPerView: 2,
                         spaceBetween: 0,
                     },

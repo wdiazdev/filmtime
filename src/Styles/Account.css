@@ -6,8 +6,6 @@
     background-size: cover;
 }
 
-.saved--movie--wrapper {}
-
 .banner--container {
     position: relative;
     display: flex;
@@ -42,4 +40,20 @@
     object-fit: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     z-index: 5;
+}
+
+@media screen and (max-width:1000px) {
+    .banner--container {
+        min-height: 200px;
+    }
+
+    .banner--container>h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .banner--container>h2 {
+        font-size: 2rem;
+    }
 }
