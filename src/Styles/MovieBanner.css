@@ -45,6 +45,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: max-content;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     gap: 1.5rem;
 }
 
@@ -59,3 +64,9 @@
 .banner-icons>svg:hover {
     color: #fff;
 }
+
+@media screen and (max-width:1000px) {}
+
+@media screen and (max-width:640px) {}
+
+@media screen and (max-width:360px) {}
