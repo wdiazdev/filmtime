@@ -97,7 +97,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        padding: 0.5rem 1.5rem;
     }
 
     .nav--links {

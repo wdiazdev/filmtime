@@ -25,12 +25,10 @@ export const Player = () => {
         fetchMovieVideo();
     }, []);
 
-
     const renderTrailer = () => {
 
         const trailer = trailerVideo?.videos.results.find(
-            video => video.name === 'official trailer' ||
-                video.name === 'Official Trailer')
+            video => video.name)
 
         return (
             < YouTube
@@ -45,6 +43,12 @@ export const Player = () => {
                     }
                 }}
             />
+        )
+    };
+
+    const errorTrailer = () => {
+        return (
+            <h2>Not Available</h2>
         )
     };
 
