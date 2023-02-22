@@ -6,7 +6,7 @@ import { FaInfoCircle, FaRegFrown } from 'react-icons/fa';
 import '../Styles/SavedMovie.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function SavedMovies() {
+export default function SavedMovie() {
 
     const [movies, setMovies] = useState([]);
 

@@ -4,7 +4,7 @@ import ShowBanner from '../Components/ShowBanner';
 import { SeriesRequest } from '../Utility/api';
 import { Loader } from '../Components/Loader';
 
-export default function Series() {
+export const Series = () => {
 
     const [loading, setLoading] = useState(true);
 

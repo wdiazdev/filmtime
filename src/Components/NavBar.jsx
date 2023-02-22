@@ -6,7 +6,7 @@ import { BsPower } from 'react-icons/Bs';
 import { RiAccountCircleFill } from 'react-icons/Ri';
 import { GiFilmStrip } from 'react-icons/Gi'
 
-export default function NavBar() {
+export const NavBar = () => {
 
     const [error, setError] = useState(false);
 
@@ -64,7 +64,7 @@ export default function NavBar() {
 
                         <button
                             className='login--btn'
-                            onClick={() => navigate('/Login')}
+                            onClick={() => navigate('/login')}
                         >
                             <RiAccountCircleFill />
                         </button>

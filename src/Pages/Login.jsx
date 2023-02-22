@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { userAuth } from '../Context/AuthContext';
 
-export default function Login() {
+export const Login = () => {
 
     const [error, setError] = useState();
 
@@ -63,10 +63,11 @@ export default function Login() {
 
                 {error && <p className='signup--error'>{error}</p>}
 
-                <p>Don't have an account? <Link to='/signup'>Sign Up</Link></p>
+                <Link to='/forgot-password'>Forgot Password?</Link>
 
             </form>
 
+            <p>Don't have an account? <Link to='/signup'>Sign Up</Link></p>
 
         </div>
     )

@@ -7,7 +7,6 @@ import SavedShow from '../Components/SavedShow';
 
 export default function Account() {
 
-
     return (
         <div className='account--container'>
 

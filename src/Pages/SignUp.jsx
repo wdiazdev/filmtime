@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/SignUp.css';
 import { userAuth } from '../Context/AuthContext';
 
-export default function SignUp() {
+export const SignUp = () => {
 
     const [error, setError] = useState();
 

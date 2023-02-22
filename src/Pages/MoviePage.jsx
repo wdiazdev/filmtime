@@ -7,7 +7,7 @@ import { formatCurrency } from '../Utility/FormatCurrency';
 import { BiCameraMovie } from 'react-icons/Bi';
 import { BsBackspaceFill } from 'react-icons/Bs';
 
-export default function MoviePage() {
+export const MoviePage = () => {
 
     const [movie, setMovie] = useState();
 
