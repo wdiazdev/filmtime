@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/MovieBanner.css';
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaPlay } from 'react-icons/fa';
 import { SeriesRequest } from '../Utility/api';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,7 @@ export const ShowBanner = () => {
 
     //? randomMovie = to get random movie from the API request
 
-    const randomMovie = nowPlaying[Math.floor(Math.random() * nowPlaying.length)];
+    const randomShow = nowPlaying[Math.floor(Math.random() * nowPlaying.length)];
 
     // console.log(randomMovie);
 
@@ -38,25 +38,23 @@ export const ShowBanner = () => {
         <div className='movie--banner--container'>
 
             <img
-                src={`https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}`}
-                alt={randomMovie?.title}
+                src={`https://image.tmdb.org/t/p/original/${randomShow?.backdrop_path}`}
+                alt={randomShow?.title}
             />
 
             <div className='overlay'></div>
 
             <div className='movie--banner--info'>
 
-                <h1>{randomMovie?.name}</h1>
+                <h1>{randomShow?.name}</h1>
 
-                <p><span>Released:</span> {randomMovie?.first_air_date}</p>
+                <p><span>Released:</span> {randomShow?.first_air_date}</p>
 
-                <p>{truncateString(randomMovie?.overview, 200)}</p>
+                <p>{truncateString(randomShow?.overview, 200)}</p>
 
-                <div
-                    className='banner-icons'
-                    onClick={() => navigate(`/movie/${randomMovie?.id}`)}
-                >
-                    <FaInfoCircle />
+                <div className='banner-icons'>
+                    <FaInfoCircle onClick={() => navigate(`/show/${randomShow?.id}`)} />
+                    <FaPlay onClick={() => navigate(`/showplayer/${randomShow?.id}`)} />
                 </div>
 
             </div>

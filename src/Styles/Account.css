@@ -12,12 +12,14 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 300px;
+    min-height: 30vh;
 }
 
 .banner--container>h2 {
+    position: absolute;
+    bottom: 4rem;
     z-index: 1000;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: var(--primary--font);
 }
 
@@ -38,22 +40,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
     z-index: 5;
 }
 
 @media screen and (max-width:1000px) {
     .banner--container {
-        min-height: 200px;
-    }
-
-    .banner--container>h2 {
-        font-size: 3rem;
+        min-height: 28vh;
     }
 }
 
 @media screen and (max-width:640px) {
     .banner--container>h2 {
+        bottom: 3rem;
         font-size: 2rem;
     }
 }

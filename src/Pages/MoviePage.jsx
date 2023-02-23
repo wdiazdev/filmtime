@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { moviePageApi } from '../Utility/api';
-import '../Styles/ShowPage.css';
+import '../Styles/MoviePage.css';
 import { formatCurrency } from '../Utility/FormatCurrency';
 import { BiCameraMovie } from 'react-icons/Bi';
 import { BsBackspaceFill } from 'react-icons/Bs';

@@ -26,6 +26,7 @@ export const Series = () => {
                     <ShowCardSlider title={'Popular'} fetchData={SeriesRequest.popular} />
 
                     <ShowCardSlider title={'Top Rated'} fetchData={SeriesRequest.topRated} />
+
                 </>
             }
         </>

@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { moviePageApi } from '../Utility/api';
+import { showPageApi } from '../Utility/api';
 import '../Styles/Player.css';
 import YouTube from 'react-youtube';
 import '../Styles/Player.css';
 import { BsBackspaceFill } from 'react-icons/Bs';
 
-export const Player = () => {
+export const ShowPlayer = () => {
 
     const [trailerVideo, setTrailerVideo] = useState([]);
 
@@ -16,7 +16,7 @@ export const Player = () => {
     const { id } = useParams();
 
     const fetchMovieVideo = async () => {
-        const { data } = await axios.get(moviePageApi(id));
+        const { data } = await axios.get(showPageApi(id));
         setTrailerVideo(data);
         console.log(data);
     };
@@ -32,7 +32,7 @@ export const Player = () => {
 
         if (!trailer) {
             alert('No trailer found')
-            navigate('/movies');
+            navigate('/series');
         } else {
             return (
                 < YouTube
@@ -56,7 +56,7 @@ export const Player = () => {
 
             <BsBackspaceFill onClick={() => navigate(-1)} />
 
-            {trailerVideo?.videos ? renderTrailer() : <h2>No Video Available</h2>}
+            {trailerVideo?.videos ? renderTrailer() : <h2>No Videos Available</h2>}
 
         </div>
     )

@@ -10,6 +10,8 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import { MoviePage } from './Pages/MoviePage';
 import { Player } from './Pages/Player';
 import { ForgotPassword } from './Pages/ForgotPassword';
+import { ShowPage } from './Pages/ShowPage';
+import { ShowPlayer } from './Pages/ShowPlayer'
 
 function App() {
 
@@ -19,8 +21,10 @@ function App() {
       <Routes>
         <Route index path='/' element={<Movies />} />
         <Route exact path='/movie/:id' element={<MoviePage />} />
+        <Route exact path='/show/:id' element={<ShowPage />} />
         <Route exact path='/series' element={<Series />} />
         <Route exact path='/player/:id' element={<Player />} />
+        <Route exact path='/showplayer/:id' element={<ShowPlayer />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/signup' element={<SignUp />} />
         <Route exact path='/forgot-password' element={<ForgotPassword />} />
