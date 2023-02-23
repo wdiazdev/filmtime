@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import Card from './Card';
+import { Card } from './Card';
 import '../Styles/CardSlider.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper';
 
-export default function CardSlider({ title, fetchData }) {
+export const CardSlider = ({ title, fetchData }) => {
 
     const [nowPlaying, setNowPlaying] = useState([]);
 

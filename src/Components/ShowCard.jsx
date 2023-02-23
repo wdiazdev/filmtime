@@ -5,7 +5,7 @@ import { db } from '../Utility/Firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
-export default function ShowCard({ show }) {
+export const ShowCard = ({ show }) => {
 
     const [like, setLike] = useState(false);
 

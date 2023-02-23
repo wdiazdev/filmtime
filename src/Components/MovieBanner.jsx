@@ -4,7 +4,8 @@ import { FaInfoCircle, FaPlay } from 'react-icons/fa';
 import { sendRequest } from '../Utility/api';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-export default function MovieBanner() {
+
+export const MovieBanner = () => {
 
     const [nowPlaying, setNowPlaying] = useState('');
 

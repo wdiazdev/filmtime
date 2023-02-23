@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { BsSearch, BsInfoCircleFill } from 'react-icons/Bs';
 import { FaPlay } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import '../Styles/Search.css';
 import { searchMovie } from '../Utility/api';
+import '../Styles/Search.css';
 
-export default function Search() {
+export const Search = () => {
 
     const [movie, setMovie] = useState([]);
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import ShowCardSlider from '../Components/ShowCardSlider';
-import ShowBanner from '../Components/ShowBanner';
+import { ShowCardSlider } from '../Components/ShowCardSlider';
+import { ShowBanner } from '../Components/ShowBanner';
 import { SeriesRequest } from '../Utility/api';
 import { Loader } from '../Components/Loader';
 

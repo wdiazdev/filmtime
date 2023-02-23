@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
-import ShowCard from './ShowCard';
+import { ShowCard } from './ShowCard';
 
 
-export default function ShowCardSlider({ fetchData, title }) {
+export const ShowCardSlider = ({ fetchData, title }) => {
 
     const [nowPlaying, setNowPlaying] = useState([]);
 

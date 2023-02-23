@@ -1,9 +1,9 @@
-import MovieBanner from '../Components/MovieBanner';
-import CardSlider from '../Components/CardSlider';
+import { MovieBanner } from '../Components/MovieBanner';
+import { CardSlider } from '../Components/CardSlider';
 import { sendRequest } from '../Utility/api';
 import { Loader } from '../Components/Loader';
 import { useEffect, useState } from 'react';
-import Search from '../Components/Search';
+import { Search } from '../Components/Search';
 
 export const Movies = () => {
 
