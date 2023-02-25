@@ -32,7 +32,7 @@
     position: relative;
     width: 250px;
     height: 175px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     transition: 0.3s ease-in-out;
     overflow: hidden;
     border: 2px solid var(--secondary--color);
@@ -49,7 +49,6 @@
 .card--container>img {
     width: 250px;
     height: 175px;
-    border-radius: 1rem;
     object-fit: cover;
     transition: 0.6s ease-in-out;
 }
