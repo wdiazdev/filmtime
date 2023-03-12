@@ -39,7 +39,7 @@ export default function SavedMovie() {
                 return (
                     <div className='saved--movie--container'>
 
-                        <img key={id} src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item.title} />
+                        <img key={id} src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item?.title} />
 
                         <div className='saved--movie--btn'>
 
