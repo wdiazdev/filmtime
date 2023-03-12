@@ -36,18 +36,18 @@ export default function savedShow() {
 
     return (
         <>
-            {show.map((show, id) => {
+            {show.map((show, index) => {
                 return (
-                    <div className='saved--movie--container'>
+                    <div key={index} className='saved--movie--container'>
 
-                        <img key={id} src={`https://image.tmdb.org/t/p/w500/${show?.img}`} alt={show.title} />
+                        <img src={`https://image.tmdb.org/t/p/w500/${show?.img}`} alt={show?.title} />
 
                         <div className='saved--movie--btn'>
 
                             <FaInfoCircle title='More Info' onClick={() => navigate(`/show/${show?.id}`)} />
 
                             <FaRegFrown
-                                onClick={() => deleteSavedShow(show.id)}
+                                onClick={() => deleteSavedShow(show?.id)}
                                 title='Remove'
                             />
 
@@ -55,7 +55,6 @@ export default function savedShow() {
 
                     </div>
                 )
-
             })}
         </>
     )

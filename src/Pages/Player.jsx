@@ -18,7 +18,7 @@ export const Player = () => {
     const fetchMovieVideo = async () => {
         const { data } = await axios.get(moviePageApi(id));
         setTrailerVideo(data);
-        console.log(data);
+        // console.log(data);
     };
 
     useEffect(() => {
