@@ -12,13 +12,18 @@ export const CardSlider = ({ title, fetchData }) => {
     const [nowPlaying, setNowPlaying] = useState([]);
 
     useEffect(() => {
-        axios.get(fetchData)
-            .then((request) => {
-                setNowPlaying(request.data.results)
-            })
+        const fetchCardsData = async () => {
+            try {
+                const { data } = await axios.get(fetchData);
+                setNowPlaying(data.results)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchCardsData();
     }, []);
 
-    // console.log(nowPlaying);
+    console.log(nowPlaying);
 
     return (
         <div className='card--slider--container'>
