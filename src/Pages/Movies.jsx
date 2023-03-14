@@ -10,10 +10,13 @@ export const Movies = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 500)
+        const timeoutId = setTimeout(() => {
+            setLoading(false);
+        }, 500);
+
+        setLoading(true);
+
+        return () => clearTimeout(timeoutId);
     }, []);
 
     return (

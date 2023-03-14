@@ -11,12 +11,17 @@ export const MovieBanner = () => {
 
     const navigate = useNavigate();
 
-    const fetchRandomMovie = async () => {
-        const { data } = await axios.get(sendRequest.nowPlaying);
-        setNowPlaying(data.results)
-    };
 
     useEffect(() => {
+        const fetchRandomMovie = async () => {
+            try {
+                const { data } = await axios.get(sendRequest.nowPlaying);
+                setNowPlaying(data.results);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
         fetchRandomMovie();
     }, []);
 
