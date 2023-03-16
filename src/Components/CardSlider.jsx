@@ -23,8 +23,6 @@ export const CardSlider = ({ title, fetchData }) => {
         fetchCardsData();
     }, []);
 
-    console.log(nowPlaying);
-
     return (
         <div className='card--slider--container'>
 

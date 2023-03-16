@@ -20,6 +20,7 @@ export const Player = () => {
         setTrailerVideo(data);
         // console.log(data);
     };
+    // console.log(trailerVideo);
 
     useEffect(() => {
         fetchMovieVideo();
