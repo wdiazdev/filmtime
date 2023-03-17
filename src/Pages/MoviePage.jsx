@@ -15,15 +15,19 @@ export const MoviePage = () => {
 
     const navigate = useNavigate();
 
-    const fetchMovie = async () => {
-        const { data } = await axios.get(moviePageApi(id));
-        setMovie(data)
-        // console.log(data);
-    };
-
     useEffect(() => {
+        const fetchMovie = async () => {
+            try {
+                const { data } = await axios.get(moviePageApi(id));
+                setMovie(data);
+                // console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
         fetchMovie();
-    }, []);
+    }, [id]);
 
     return (
         <div className='show--page--container'>

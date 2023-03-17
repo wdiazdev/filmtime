@@ -13,15 +13,18 @@ export const ShowPage = () => {
 
     const navigate = useNavigate();
 
-    const fetchShow = async () => {
-        const { data } = await axios.get(showPageApi(id));
-        setShow(data)
-        console.log(data);
-    };
-
     useEffect(() => {
+        const fetchShow = async () => {
+            try {
+                const { data } = await axios.get(showPageApi(id));
+                setShow(data)
+                // console.log(data);
+            } catch (error) {
+                console.log(error)
+            }
+        }
         fetchShow();
-    }, []);
+    }, [id]);
 
     return (
         <div className='show--page--container'>

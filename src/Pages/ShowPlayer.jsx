@@ -15,15 +15,19 @@ export const ShowPlayer = () => {
 
     const { id } = useParams();
 
-    const fetchMovieVideo = async () => {
-        const { data } = await axios.get(showPageApi(id));
-        setTrailerVideo(data);
-        console.log(data);
-    };
-
     useEffect(() => {
+        const fetchMovieVideo = async () => {
+            try {
+                const { data } = await axios.get(showPageApi(id));
+                setTrailerVideo(data);
+                // console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
         fetchMovieVideo();
-    }, []);
+    }, [id]);
 
     const renderTrailer = () => {
 

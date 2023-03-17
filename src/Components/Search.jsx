@@ -14,20 +14,15 @@ export const Search = () => {
 
     const navigate = useNavigate();
 
-    const searchedMovie = () => {
-        axios.get(searchMovie + search)
-            .then(
-                (response) => {
-                    setMovie(response.data.results)
-                    // console.log(response.data.results);
-                }
-            ).catch((err) => {
-                console.log(err);
-            })
-    };
-
     useEffect(() => {
-        searchedMovie();
+        axios.get(searchMovie + search)
+            .then(response => {
+                setMovie(response.data.results);
+                // console.log(response.data.results);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, [search]);
 
     const handleSearch = (event) => {

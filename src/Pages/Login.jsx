@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { userAuth } from '../Context/AuthContext';
 
@@ -27,9 +27,13 @@ export const Login = () => {
         }
     };
 
-    setTimeout(() => {
-        setError(false)
-    }, 5000)
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setError(false);
+        }, 5000);
+        // cleanup function to clear timeout on component unmount or re-render
+        return () => clearTimeout(timeoutId);
+    }, [setError]);
 
     return (
         <div className='signup--container'>

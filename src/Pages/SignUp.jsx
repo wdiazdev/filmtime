@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/SignUp.css';
 import { userAuth } from '../Context/AuthContext';
@@ -34,9 +34,15 @@ export const SignUp = () => {
         }
     };
 
-    setTimeout(() => {
-        setError(false)
-    }, 5000)
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setError(false);
+        }, 5000);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [setError]);
 
     return (
         <div className='signup--container'>
